@@ -1,38 +1,139 @@
+:root {
+  --header: #ff57bb;
+  --bodyBackground: #fff4e4;
+  --button: #ff553e;
+  --h1text: #5d2a42;
+  --smalerText: rgb(187, 185, 185);
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  position: absolute;
+  margin-left: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  min-height: 95vh;
+  background-color: var(--bodyBackground);
+  border-radius: 40px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: var(--header);
+  width: 100%;
+  text-align: center;
+  color: var(--bodyBackground);
+  overflow: hidden;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.googlebtn {
+  background-color: white;
+  color: var(--h1text);
+  padding: 0 20px;
+}
+
+img,
+.Messages-message > .avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin: 0 10px -10px;
+}
+
+img {
+  padding-bottom: 10px;
+}
+
+.Messages-list {
+  padding: 20px 0;
+  width: 70%;
+  max-width: 900px;
+  margin: 0 auto;
+  list-style: none;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.Messages-message {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 10px;
+}
+
+.Messages-message.currentMember {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.Message-content {
+  display: inline-block;
+}
+
+.currentMember > .Message-content {
+  align-items: flex-start;
+}
+
+.Message-content > .username {
+  color: var(--bodyBackground);
+  font-size: 14px;
+  padding: 5px;
+  padding-bottom: 4px;
+  background-color: var(--h1text);
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.Message-content > .text {
+  padding: 10px;
+  max-width: 400px;
+  border-radius: 12px;
+  color: rgb(156, 154, 154);
+  font-weight: bolder;
+  text-align: left;
+}
+
+.currentMember > .Message-content .text {
+  background-color: var(--header);
+}
+
+form {
+  display: flex;
+  width: 80%;
+  max-width: 900px;
+  margin: auto auto;
+  padding-bottom: 20px;
+  justify-content: space-around;
+}
+
+input {
+  padding: 5px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 4px solid var(--button);
+  box-shadow: 6px 6px 9px var(--button);
+  background-color: var(--bodyBackground);
+  flex-grow: 1;
+  height: 50px;
+  width: 200px;
+}
+
+button {
+  padding: 15px;
+  margin: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: orangered;
   color: white;
+  height: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 4px solid var(--bodyBackground);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  background-color: var(--bodyBackground);
+  color: var(--button);
+  border-color: var(--button);
 }
